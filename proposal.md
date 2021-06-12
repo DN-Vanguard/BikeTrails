@@ -30,16 +30,20 @@ Our product is an application where you can see everything in one central window
 
 ## <u>User Story</u>
 Who are we building this for?
-AS A
+AS A **frequent flyer**
 
 What is the user trying to achieve?
-I WANT
+I WANT **the experience of booking a flight all in one window/area**
 
 Why do they want to achieve this?
-SO THAT
+SO THAT **I can save time, and recall what I need from one place**
 
 ## <u>Wireframe or sketch of design</u>
 
 ## <u>API's to use</u>
 
 ## <u>Rough Breakdown of tasks</u>
+* Implement weather forecast from HW6
+* Use Hotel API's and create a hotel booking interface
+* Use flight API's and create a flight booking interface
+* Depending on the users flight destination, use certain cities API's to make suggestions on top tourist attractions
