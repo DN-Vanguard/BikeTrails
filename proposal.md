@@ -1,16 +1,16 @@
 # Vacation Planner
 
-## Project Description
+## <u>Project Description</u>
 Vacation destination traveling app.
 
 **AUDIENCE**:
 Users who live in the greater seattle area and use SEA airport and are flying to a US based city
 
 **PROBLEM**:
-Users are always trying to find their next vacation spot. However, they have to scour the web and open many websites / go through many web portals to find the information they are looking for.
+Users are always trying to find their next vacation spot. However, they have to scour the web and/or open many websites and go through many web portals to find the information they are looking for.
 
 **PRODUCT SOLUTION**:
-Our product is an application where you can see everything when booking a flight in one window. When booking, you'll be able to see the forcasted weather, book a hotel and flight, and depending on the city chosen, an iternary suggestion will appear.
+Our product is an application where you can see everything in one central window. When booking, you'll be able to see the forcasted weather, book a hotel and flight, and depending on the city chosen, an iternary suggestion will appear.
 
 **MVP FEATURES**:
 * Weather of the city traveling to
@@ -28,18 +28,18 @@ Our product is an application where you can see everything when booking a flight
 * Number of rooms when booking hotel
 
 
-## User Story
-* **<u>Who are we building this for?</u>**
+## <u>User Story</u>
+Who are we building this for?
 AS A
 
-* **<u>What is the user trying to achieve?</u>**
+What is the user trying to achieve?
 I WANT
 
-* **<u>Why do they want to achieve this?</u>**
+Why do they want to achieve this?
 SO THAT
 
-## Wireframe or sketch of design
+## <u>Wireframe or sketch of design</u>
 
-## API's to use
+## <u>API's to use</u>
 
-## Rough Breakdown of tasks
+## <u>Rough Breakdown of tasks</u>
