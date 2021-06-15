@@ -39,13 +39,13 @@ Why do they want to achieve this?
 SO THAT **I can save time, and recall what I need from one place**
 
 ## <u>Wireframe or sketch of design</u>
-
+![MockUp_of_UserInterface](assets/images/Mockup.jpg)
 ## <u>API's to use</u>
-*
-*
-*
-*
-*
+* 
+* 
+* 
+* 
+* 
 
 ## <u>Rough Breakdown of tasks</u>
 * Implement weather forecast from HW6
