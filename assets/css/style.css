@@ -71,7 +71,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 }
 
 /* right hand column */
-#currentWeatherBox {
+.currentWeatherBox {
     border: solid black 1px;
     padding: 5px;
     padding-left: 10px;
@@ -90,16 +90,17 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     border-radius: 5px;
     padding: 5px 15px;
 }
-#fiveDays {
+/* .sevenDays {
     display: flex;
-    justify-content: space-between;
 }
-#fiveDays div {
+.forecastStyling {
+    display: flex;
+    flex-direction: row;
     background: linear-gradient(300deg, var(--lightblue), var(--darkblue));
     color: white;
     width: calc(20% - 10px);
     padding: 5px;
-}
+} */
 .icon {
     width: 50px;
 }
