@@ -1,4 +1,4 @@
-# Name
+# Bike Trails
 
 ## <u>Project Description</u>
 Planning your next biking trail? Our app allows you to search any city, and it'll populate a list of bike trails for you and/or your friends can go to. 
@@ -44,14 +44,18 @@ THEN I am presented with a curated list of bike trails for that city and the cur
 WHEN I enter a city that is invalid
 THEN I am presented with an error message that says "the city '______' does not have any near bike trails"
 WHEN I view the curated trail list for the city
-THEN I am presented with the trail name, it's URL, "see map" link, description, city, region, and country
-WHEN I view the weather conditions for the city
-THEN I am presented with todays weather and a 6-day forecast that displays the date, icon representation of weather conditions, temperature, humidity, and UV index
+THEN I am presented with the trail name, city,country, and a "see map" link
 WHEN I click on the "see map" link
-THEN I am presented with the various map trails within the bike trails that displays its name, starting point, endpoint, distance in miles, and elevation
+THEN I am redirected to a new tab that shows the information
+WHEN I view the weather conditions for the city
+THEN I am presented with todays weather and a 6-day forecast that displays the date, icon representation of weather conditions, temperature, and humidity
+WHEN I click on the filter icon
+THEN I am presented with form inputs for the following filtering criterias: distance, search radius, and difficulty
+
 ```
 ## <u>Wireframe or sketch of design</u>
-![]()
+![Wireframe-mobile](assets/images/Wireframe-Mobile.png)
+![Wireframe-desktop](assets/images/Wireframe-Desktop.png)
 ## <u>API's to use</u>
 [TRAIL_API] https://rapidapi.com/trailapi/api/trailapi/
 
