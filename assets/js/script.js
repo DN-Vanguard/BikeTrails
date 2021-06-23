@@ -84,7 +84,6 @@ function searchWeatherByCoordinates(lat,lon) {
 
 // Similar to the function above, but this is purely for the city
 function searchWeatherByCity() {
-    // trailsDisplay.empty();
     var locQueryUrl = `${openWeatherURL}weather?q=${citySearched}&appid=${openWeatherKey}`;
 
     fetch(locQueryUrl)

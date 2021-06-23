@@ -24,6 +24,9 @@ A biking trail app where it populates a variety of possible trails for you and/o
     - Difficulty
     - City radius
 
+## Website Link
+https://dn-vanguard.github.io/BikeTrails/
+
 ## <u>User Story</u>
 ```
 Who are we building this for?
@@ -54,8 +57,7 @@ THEN I am presented with form inputs for the following filtering criterias: dist
 
 ```
 ## <u>Wireframe or sketch of design</u>
-![Wireframe-mobile](assets/images/Wireframe-Mobile.png)
-![Wireframe-desktop](assets/images/Wireframe-Desktop.png)
+![TBD]()
 ## <u>API's to use</u>
 [TRAIL_API] https://rapidapi.com/trailapi/api/trailapi/
 

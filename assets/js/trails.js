@@ -40,10 +40,10 @@ function trailsDisplayed(data, mindist, maxdist) {
 			trailsDisplay.append(`
                 <div class="card">
                     <div class="card-content">
-                        <span class=".trail-name card-title">${data[t][1]}</span>
+                        <p class=".trail-name card-title">${data[t][1]}</p>
                         <p>${data[t][3]}
                         <br>
-                        <br>Trail length: ${data[t][0]} miles</p>
+                        <br>Trail length:${data[t][0]} miles</p>
                         <br><a href="${data[t][2]}" target="_blank">More info</a>
                     </div>
                 </div>
