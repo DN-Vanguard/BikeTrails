@@ -4,28 +4,33 @@
     box-sizing: border-box;
 }
 :root {
-    --lightblue: #3f84fb;
-    --darkblue:#1b0a33;
-    --gray: darkgray;
+    --gradientLeft: white;
+    --gradientRight: green;
+    --button: darkgray;
     --fontWeight: 600;
+    --fontColor: black;
 }
 
 /* header */
 header {
     display: flex;
     justify-content: center;
-    background: linear-gradient(160deg, var(--lightblue), var(--darkblue));
+    background: linear-gradient(150deg, var(--gradientLeft), var(--gradientRight));
     padding: 5px;
-    padding-top: 10px;
+}
+img {
+height: 50px;
 }
 
 /* h tag styling */
 h1,h2,h3,h4 {
     font-weight: var(--fontWeight);
+    color: var(--fontColor);
 }
-h1 { /* title: Weather Dashboard */
-    color: white;
+h1 { /* title: Bike Trails */
+    color: var(--fontColor);
     font-size: 200%;
+    padding-top: 10px;
 }
 h2 {/* 'search for a city' and see js code under id=currentWeatherBox*/
     font-size: 180%;
@@ -49,13 +54,16 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     padding: 5px;
     width: 25%;
 }
+#searchInput{
+    width: 100%;
+}
 #searchBtn {
-    background-color: var(--lightblue);
-    color: white;
+    background-color: var(--gradientLeft);
+    color: var(--fontColor);
     margin: 15px 0;
 }
 #clearBtn {
-    background-color: var(--darkblue);
+    background-color: var(--gradientRight);
     color: white;
     margin: 15px 0;
 
@@ -65,16 +73,17 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 }
 
 .btn { /* All clickable buttons defaults*/
-    background-color: var(--gray);
+    background-color: var(--button);
     width: 100%;
     margin: 5px 0;
 }
 
 /* right hand column */
 .currentWeatherBox {
+    display: flex;
+    justify-content: flex-start;
     border: solid black 1px;
     padding: 5px;
-    padding-left: 10px;
 }
 #error{
     padding: 20px;
@@ -84,23 +93,24 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     width: 75%;
     padding: 10px;
 }
-.uvIndex {
-    background: green;
+
+.currentWeatherStyling{
+    background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
     color: white;
-    border-radius: 5px;
-    padding: 5px 15px;
-}
-/* .sevenDays {
-    display: flex;
-}
-.forecastStyling {
-    display: flex;
-    flex-direction: row;
-    background: linear-gradient(300deg, var(--lightblue), var(--darkblue));
-    color: white;
-    width: calc(20% - 10px);
+    width: 180px;
+    margin-left: 15px;
     padding: 5px;
-} */
+}
+.sixDays {
+    display: flex;
+}
+.sixDays div {
+    background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
+    color: white;
+    width: 180px;
+    margin-left: 20px;
+    padding: 5px; 
+}
 .icon {
     width: 50px;
 }

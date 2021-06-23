@@ -10,7 +10,7 @@ var weatherDisplayEL = $("#weatherDisplay");
 // tracking variables
 var citySearched;
 var successfulSearch = false; //equaling false because we are implying that the user is going to enter an incorrect city, and will become true ONLY IF the user typed a legitmate city. The data is pulled from 'APIurl'
-var sevenDays = 6;
+var sixDays = 6;
 var offset = 0; //starting off at 0 because that is the current day.
 var previousSearches = JSON.parse(localStorage.getItem("previousSearches")) || [];
 
@@ -29,16 +29,16 @@ function errorDisplay() {
 function weatherDisplayed(weatherData) {
     weatherDisplayEL.empty();
     weatherDisplayEL.append(`
-    <div class="sevenDays">
-        <div>
-            <h4>${moment(weatherData.current.dt, "X").format("MM/DD/YYYY")}</h4>
-            <img src="https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
-            <p>Temp: ${weatherData.current.temp} <span>&#176;</span>F</p>
-            <p>Wind: ${weatherData.current.wind_speed} MPH</p>
-            <p>Humidity: ${weatherData.current.humidity} %</p>
+        <div class="currentWeatherBox">
+            <div class="currentWeatherStyling">
+                <h4>${moment(weatherData.current.dt, "X").format("MM/DD/YYYY")}</h4>
+                <img src="https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
+                <p>Temp: ${weatherData.current.temp} <span>&#176;</span>F</p>
+                <p>Wind: ${weatherData.current.wind_speed} MPH</p>
+                <p>Humidity: ${weatherData.current.humidity} %</p>
+            </div>
+            <div class="sixDays">${forecastDisplayed(weatherData)}</div>
         </div>
-        <div class="forecastStyling">${forecastDisplayed(weatherData)}</div>
-    </div>
     `);
 
 }
@@ -49,7 +49,7 @@ function forecastDisplayed(forecastData) {
 
     offset = (moment(forecastData.current.dt, "X").format("D") === moment(forecastData.daily[0].dt, "X").format("D") ? 1 : 0);
 
-    for(var i = 0 + offset; i < sevenDays + offset; i++) {
+    for(var i = 0 + offset; i < sixDays + offset; i++) {
         forecast.push(`
             <div>
                 <h4>${moment(forecastData.daily[i].dt, "X").format("MM/DD/YYYY")}</h4>
