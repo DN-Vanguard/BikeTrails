@@ -4,33 +4,29 @@
     box-sizing: border-box;
 }
 :root {
-    --gradientLeft: white;
-    --gradientRight: green;
-    --button: darkgray;
+    --gradientLeft: black;
+    --gradientRight: #228B22;
+    --grey: #e5e5e5;
+    --fontColor: White;
     --fontWeight: 600;
-    --fontColor: black;
 }
 
 /* header */
 header {
     display: flex;
     justify-content: center;
-    background: linear-gradient(150deg, var(--gradientLeft), var(--gradientRight));
-    padding: 5px;
+    background: linear-gradient(160deg, var(--gradientLeft), var(--gradientRight));
+    padding: 10px;
 }
-img {
-height: 50px;
-}
-
 /* h tag styling */
 h1,h2,h3,h4 {
     font-weight: var(--fontWeight);
+    margin: 0px;
     color: var(--fontColor);
+
 }
-h1 { /* title: Bike Trails */
-    color: var(--fontColor);
+h1 { /* title: Weather Dashboard */
     font-size: 200%;
-    padding-top: 10px;
 }
 h2 {/* 'search for a city' and see js code under id=currentWeatherBox*/
     font-size: 180%;
@@ -43,74 +39,63 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     font-size: 130%;
 }
 
-/* Classes styling */
-.mainRow { /* Overall container for everything within the main tags */
-    display: flex;
-    margin-left: 5px;
-}
-
 /* left hand column */
 .searchBox {
     padding: 5px;
     width: 25%;
 }
-#searchInput{
-    width: 100%;
-}
-#searchBtn {
-    background-color: var(--gradientLeft);
-    color: var(--fontColor);
-    margin: 15px 0;
-}
-#clearBtn {
-    background-color: var(--gradientRight);
-    color: white;
-    margin: 15px 0;
 
-}
-#previousSearch {
+#previous-search {
     border-top: solid black 2px;
 }
 
 .btn { /* All clickable buttons defaults*/
-    background-color: var(--button);
     width: 100%;
     margin: 5px 0;
 }
 
 /* right hand column */
-.currentWeatherBox {
+.borderWeatherBox {
     display: flex;
     justify-content: flex-start;
     border: solid black 1px;
+    margin-top: 5px;
     padding: 5px;
 }
 #error{
     padding: 20px;
     margin-left: 20px;
 }
-#weatherDisplay {
-    width: 75%;
-    padding: 10px;
-}
 
-.currentWeatherStyling{
-    background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
-    color: white;
-    width: 180px;
-    margin-left: 15px;
-    padding: 5px;
-}
 .sixDays {
     display: flex;
 }
 .sixDays div {
     background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
-    color: white;
+    color: var(--fontColor);
     width: 180px;
     margin-left: 20px;
     padding: 5px; 
 }
+.currentWeatherStyling{
+    background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
+    width: 180px;
+    margin-left: 8px;
+    padding: 5px;
+    color: var(--fontColor);
+
+}
+
+.iconRow {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
 .icon {
     width: 50px;
+}
+
+.card{
+    background: linear-gradient(160deg, var(--gradientLeft), var(--gradientRight));
+    color: var(--fontColor);
 }

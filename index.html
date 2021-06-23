@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!-- Meyerweb reset CSS -->
+    <!-- meyerweb reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- My CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Bike Trails</title>
@@ -18,31 +16,35 @@
 
 <body>
     <header>
-        <img src="assets/images/noun_Bike_1720157.png" alt="logo"> <h1>Bike Trails</h1>
+        <h1>Find bike trails near you!</h1>
     </header>
 
-    <main class="mainRow">
-        <section class="searchBox">
-            <h2>Search for a City:</h2>
+    <main class="row">
+        <section class="col s3">
             <form id="search">
             </form>
-            <div id="previousSearch">
+            <form id="mindist">
+            </form>
+            <form id="maxdist"></form>
+            <div id="previous-search">
             </div>
         </section>
-        <section id="weatherDisplay">
+        <section class="col s9">
+            <section id="weather-display"></section>
+            <section id="trails-display"></section>
         </section>
     </main>
-    
+
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
     <!-- My JavaScript -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/trails.js"></script>
 </body>
 
 </html>
