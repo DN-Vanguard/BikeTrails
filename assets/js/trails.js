@@ -9,7 +9,7 @@ function filterAndSortData(data) {
     var info = [];
 
     for (var x = 0; x < data.length; x++) {
-		info[x] = [parseFloat(data[x].length), data[x].name, data[x].url, data[x].description]
+		info[x] = [parseFloat(data[x].length), data[x].name, data[x].url, data[x].description, data[x].city]
 	}
 	// console.log(info)
 	// Sort trail list in descending order
@@ -43,7 +43,8 @@ function trailsDisplayed(data, mindist, maxdist) {
                         <p class=".trail-name card-title">${data[t][1]}</p>
                         <p>${data[t][3]}
                         <br>
-                        <br>Trail length:${data[t][0]} miles</p>
+                        <br>Trail length: ${data[t][0]} miles</p>
+                        <br>Local City: ${data[t][4]}</p>
                         <br><a href="${data[t][2]}" target="_blank">More info</a>
                     </div>
                 </div>

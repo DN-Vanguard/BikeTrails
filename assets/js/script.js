@@ -33,7 +33,7 @@ function weatherDisplayed(weatherData) {
     weatherDisplay.append(`
         <div class="borderWeatherBox">
             <div class="currentWeatherStyling">
-                <h3>${moment(weatherData.current.dt, "X").format("MM/DD/YYYY")}</h3>
+                <h3>${moment(weatherData.current.dt, "X").format("dddd : MM/DD/YYYY")}</h3>
                 <img src="https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png" alt="weather icon" class="icon">
                 <h1>${weatherData.current.temp} <span>&#176;</span>F</h1>
             </div>
@@ -51,7 +51,7 @@ function forecastDisplayed(forecastData) {
     for(var i = 0 + offset; i < sixDays + offset; i++) {
         forecast.push(`
             <div>  
-                <h3>${moment(forecastData.daily[i].dt, "X").format("MM/DD/YYYY")}</h3>
+                <h3>${moment(forecastData.daily[i].dt, "X").format("dddd : MM/DD/YYYY")}</h3>
                 <img src="https://openweathermap.org/img/wn/${forecastData.daily[i].weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
                 <h1>${forecastData.daily[i].temp.day}<span>&#176;</span>F</h1>  
             </div>
@@ -125,6 +125,12 @@ function clearSearchbox() {
         <button type="submit" class="waves-effect waves-light amber accent-4 btn" id="searchBtn">Search</button>
     `)
 }
+function getSelectValue()
+    {
+      var selectedValue = document.getElementById("list").value;
+      console.log(selectedValue);
+    }
+    
 
 // Will clear the saved cities
 function clearSavedHistory() {
@@ -166,6 +172,7 @@ function searchSubmit(event) {
     citySearched = $("#searchInput").val(); //pulled id from function 'clearSearchbox'
 
     searchWeatherByCity();
+
 }
 
 // Once the search buttion is clicked, display values

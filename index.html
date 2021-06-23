@@ -18,16 +18,20 @@
     <header>
         <h1>Find Bike Trails Near You!</h1>
     </header>
+<div>
+    <select id="list" onchange="getSelectValue();">
+        <option value="js">JavaScript</option>
+        <option value="php">PHP</option>
+        <option value="c#">Csharp</option>
+        <option value="java">Java</option>
+        <option value="node">Node.js</option>
+    </select>
 
+</div>
     <main class="row">
         <section class="col s3">
-            <form id="search">
-            </form>
-            <form id="mindist">
-            </form>
-            <form id="maxdist"></form>
-            <div id="previous-search">
-            </div>
+            <form id="search"></form>
+            <div id="previous-search"></div>
         </section>
         <section class="col s9">
             <section id="weather-display"></section>
@@ -45,6 +49,16 @@
     <!-- My JavaScript -->
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/trails.js"></script>
+    <script>
+    
+        function getSelectValue()
+        {
+            var selectedValue = document.getElementById("list").value;
+            console.log(selectedValue);
+        }
+        getSelectValue();
+    
+    </script>
 </body>
 
 </html>
