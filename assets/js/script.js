@@ -178,6 +178,7 @@ function buttonClick(event) {
         clearSavedHistory();
         weatherDisplay.empty();
         previousSearches = [];
+        trailsDisplay.empty();
         saveSearches();
     } else {
         citySearched = btnValue;
