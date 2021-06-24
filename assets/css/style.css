@@ -96,8 +96,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 }
 
 /* Modal Content */
-.modal{
-    display:block;
+
     background-color: rgba(0,0,0,0.3);
 }
 .modal1{
@@ -112,7 +111,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     background-color: coral;
     display:flex;
     justify-content: space-evenly;
-    align-items: stretch;
+
 }
 *.modal h3{
     margin:auto;
@@ -122,7 +121,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     margin: 0;
     padding: 0px;
     border: 1px solid #888;
-    width: 100%;
+
   }
   
 /* The Close Button */
