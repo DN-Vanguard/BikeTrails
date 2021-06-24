@@ -21,6 +21,8 @@ function ErrorBikeinputschk(mindist,maxdist,radius){
         document.getElementsByClassName('modal1')[0].style.display ="block";
         return(false);
     }
+    // mindist=parseFloat(mindistEl.val())
+    // maxdist=parseFloat(maxdistEl.val())
     var badinputs = (!isNumeric(mindist) || !isNumeric(maxdist)||mindist > maxdist || mindist <0 )
     if(badinputs){
 		// console.log("modal called")
