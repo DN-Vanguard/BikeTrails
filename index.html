@@ -18,16 +18,7 @@
     <header>
         <h1>Find Bike Trails Near You!</h1>
     </header>
-<!-- <div>
-    <select id="list" onchange="getSelectValue();">
-        <option value="js">JavaScript</option>
-        <option value="php">PHP</option>
-        <option value="c#">Csharp</option>
-        <option value="java">Java</option>
-        <option value="node">Node.js</option>
-    </select>
 
-</div> -->
     <main class="row">
         <section class="col s3">
             <form id="search"></form>
@@ -37,6 +28,7 @@
             <section id="weather-display"></section>
             <section id="trails-display"></section>
             <section id="modals-display">
+                <!-- these modals below will appear if a user clicks "search" but 1 or more inputs are not implemented -->
                 <div id="mmd" class="modal right">
                     <div  id = "mmd1" class="modal1">
                         <div class="modal-header " >
@@ -50,7 +42,7 @@
                             </div>
                     </div> 
                     <div id="mmd2" class="modal2">
-                        <div class="modal-header " >
+                        <div class="modal-header" >
                             <h3 style="color:white">No Trail Found meeting your needs</h3>
                             <span id="spann2" class="close">&times;</span>
                         </div>
