@@ -101,7 +101,6 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     width: 50%;
     background-color: rgba(0,0,0,0.3);
 }
-
 .modal1{
     display: none;
     flex-direction: column;
@@ -140,3 +139,11 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     text-decoration: none;
     cursor: pointer;
   } 
+
+  /* MOBILE VIEW */
+  @media only screen and (max-width: 600px) {
+    input {
+        display: flex;
+        flex-direction: column;
+    }
+  }

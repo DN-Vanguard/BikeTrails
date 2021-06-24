@@ -1,11 +1,11 @@
 # Bike Trails
 
 ## <u>Project Description</u>
-Planning your next biking trail? Our app allows you to search any city, and it'll populate a list of bike trails for you and/or your friends can go to. 
+Planning your next biking trail? Our app allows you to search any city, and it'll populate a list of nearby bike trails for you and/or your friends can go to. 
 Our app also shows the current weather and the current weeks weather forecast so you and/or your friends to take into consideration.
 
 **AUDIENCE**:
-Bicyclist/s who are looking for trails to bike.
+Bicyclist/s who are looking for nearby trails to bike.
 
 **PROBLEM**:
 Many cyclists want to try new routes or don't know which trails are available to them.
@@ -14,15 +14,19 @@ Many cyclists want to try new routes or don't know which trails are available to
 A biking trail app where it populates a variety of possible trails for you and/or your friends can take and shows the weather for the current week.
 
 **MVP FEATURES**:
-* City input searchbox
-* List of bike trails dependent on the city entered
+* Input:
+    - City
+    - Radius
+    - Minimum Trails
+    - Maximum Trails
+* Clear Button
+* Search history
 * Weather display of the current week
+* List of bike trails dependent on the city entered
 
 **FUTURE DEVELOPMENT**:
-* Curated filtering system
-    - Distance
-    - Difficulty
-    - City radius
+* User accounts
+* Social media
 
 ## Website Link
 https://dn-vanguard.github.io/BikeTrails/
@@ -42,22 +46,20 @@ SO THAT I can be fit, enjoy the outdoors, and use my bike outside of commuting
 ## <u>Acceptance Criteria</u>
 ```
 GIVEN a bike dashboard with form inputs
-WHEN I search for a city
+WHEN I enter an input for for a city, search radius, minimum distance, and maximum distance
 THEN I am presented with a curated list of bike trails for that city and the current weather and week's forecast
-WHEN I enter a city that is invalid
-THEN I am presented with an error message that says "the city '______' does not have any near bike trails"
-WHEN I view the curated trail list for the city
-THEN I am presented with the trail name, city,country, and a "see map" link
-WHEN I click on the "see map" link
-THEN I am redirected to a new tab that shows the information
+WHEN I have an input that is invalid
+THEN I am presented with an error message
 WHEN I view the weather conditions for the city
-THEN I am presented with todays weather and a 6-day forecast that displays the date, icon representation of weather conditions, temperature, and humidity
-WHEN I click on the filter icon
-THEN I am presented with form inputs for the following filtering criterias: distance, search radius, and difficulty
-
+THEN I am presented with todays weather and a 6-day forecast that displays the day of the week, date, icon representation of weather conditions, and temperature
+WHEN I view the curated trail list
+THEN I am presented with the trail name, description, trail length, city and a "more info" link
+WHEN I click on the "more info" link
+THEN I am redirected to a new tab that shows more information
 ```
 ## <u>Wireframe or sketch of design</u>
-![TBD]()
+![Landing_Page](assets/images/landingPage.png)
+![User_Inputs](assets/images/userInput.png)
 ## <u>API's to use</u>
 [TRAIL_API] https://rapidapi.com/trailapi/api/trailapi/
 
