@@ -16,7 +16,6 @@ function ErrorBikeinputschk(mindist,maxdist){
     console.log("Error Checking inprogress")
     // mindist=parseFloat(mindistEl.val())
     // maxdist=parseFloat(maxdistEl.val())
-    if()
     var badinputs = (!isNumeric(mindist) || !isNumeric(maxdist)||mindist > maxdist || mindist <0 )
     if(badinputs){
 		console.log("modal called")
