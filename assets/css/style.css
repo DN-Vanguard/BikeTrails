@@ -96,9 +96,6 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 }
 
 /* Modal Content */
-
-    background-color: rgba(0,0,0,0.3);
-}
 .modal1{
     display: none;
     flex-direction: column;
