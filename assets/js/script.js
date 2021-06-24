@@ -32,12 +32,7 @@ function weatherDisplayed(weatherData) {
     weatherDisplay.empty();
     weatherDisplay.append(`
         <div class="borderWeatherBox">
-            <div class="currentWeatherStyling">
-                <h3>${moment(weatherData.current.dt, "X").format("dddd : MM/DD/YYYY")}</h3>
-                <img src="https://openweathermap.org/img/wn/${weatherData.current.weather[0].icon}@2x.png" alt="weather icon" class="icon">
-                <h1>${weatherData.current.temp} <span>&#176;</span>F</h1>
-            </div>
-            <div class="sixDays">${forecastDisplayed(weatherData)}</div>
+            <div class="sixDays scrollbar">${forecastDisplayed(weatherData)}</div>
         </div>
     `);
 }
@@ -48,12 +43,14 @@ function forecastDisplayed(forecastData) {
 
     offset = (moment(forecastData.current.dt, "X").format("D") === moment(forecastData.daily[0].dt, "X").format("D") ? 1 : 0);
 
-    for(var i = 0 + offset; i < sixDays + offset; i++) {
+    for(var i = -1 + offset; i < sixDays + offset; i++) {
         forecast.push(`
             <div>  
-                <h3>${moment(forecastData.daily[i].dt, "X").format("dddd : MM/DD/YYYY")}</h3>
+                <h3>${moment(forecastData.daily[i].dt, "X").format("dddd")}</h3><br>
+                <h3>${moment(forecastData.daily[i].dt, "X").format("M/D/YY")}</h3>
+                 
                 <img src="https://openweathermap.org/img/wn/${forecastData.daily[i].weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
-                <h1>${forecastData.daily[i].temp.day}<span>&#176;</span>F</h1>  
+                <h1>${forecastData.daily[i].temp.day}<span>&#176;</span>F</h1>
             </div>
         `)
     }

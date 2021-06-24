@@ -70,6 +70,11 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 .sixDays {
     display: flex;
 }
+
+.scrollbar {
+    overflow: auto;
+    white-space: nowrap;
+}
 .sixDays div {
     background: linear-gradient(200deg, var(--gradientLeft), var(--gradientRight));
     color: var(--fontColor);
