@@ -102,7 +102,8 @@ function searchWeatherByCity() {
         radius = parseFloat($('#radiusInput').val());
         mindist = parseFloat($('#mindistInput').val());
         maxdist = parseFloat($('#maxdistInput').val());
-        searchTrailsByCoordinates(cityLon, cityLat, radius);
+        if(ErrorBikeinputschk(mindist,maxdist,radius)) {
+        searchTrailsByCoordinates(cityLon, cityLat, radius);}
     })
     .catch(function (error) {
         return error;

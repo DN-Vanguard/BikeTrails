@@ -1,4 +1,3 @@
-var idd = [];
 var data1;
 var data2;
 var mindistEl = $('#mindistInput');
@@ -29,7 +28,7 @@ function trailsDisplayed(data, mindist, maxdist) {
 	var end= data.length-1;
 	console.log(maxdist,data[end][0] )
 	if(mindist > data[0][0] || maxdist < data[end][0]){
-		modal.style.display = "block";
+		document.getElementsByClassName('modal2')[0].style.display = "block";
 		return;
 	}
 	
