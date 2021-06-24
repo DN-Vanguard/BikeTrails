@@ -12,7 +12,7 @@ var trailsDisplay = $("#trails-display");
 // tracking variables
 var citySearched;
 var successfulSearch = false; //equaling false because we are implying that the user is going to enter an incorrect city, and will become true ONLY IF the user typed a legitmate city. The data is pulled from 'APIurl'
-var sixDays = 6;
+var sevenDays = 6; // At 6 because we are substracting the current day
 var offset = 0; //starting off at 0 because that is the current day.
 var previousSearches = JSON.parse(localStorage.getItem("previousSearches")) || [];
 
@@ -22,7 +22,7 @@ function errorDisplay() {
     weatherDisplay.append(`
         <div id="error">
         <h2>No Results Found.</h2>
-        <h2>Please Enter a Valid City.</h2>
+        <h2>Please Enter Valid Inputs.</h2>
         </div>
     `);
 }
@@ -32,23 +32,22 @@ function weatherDisplayed(weatherData) {
     weatherDisplay.empty();
     weatherDisplay.append(`
         <div class="borderWeatherBox">
-            <div class="sixDays scrollbar">${forecastDisplayed(weatherData)}</div>
+            <div class="sevenDays scrollbar">${forecastDisplayed(weatherData)}</div>
         </div>
     `);
 }
 
-// Here is where the next 5 days of forecasted weather will appear starting with tomorrows forecast.
+// Here is where today and the next 6 days of forecasted weather will appear starting with tomorrows forecast.
 function forecastDisplayed(forecastData) {
     var forecast = [];
 
     offset = (moment(forecastData.current.dt, "X").format("D") === moment(forecastData.daily[0].dt, "X").format("D") ? 1 : 0);
 
-    for(var i = -1 + offset; i < sixDays + offset; i++) {
+    for(var i = -1 + offset; i < sevenDays + offset; i++) {
         forecast.push(`
             <div>  
                 <h3>${moment(forecastData.daily[i].dt, "X").format("dddd")}</h3><br>
-                <h3>${moment(forecastData.daily[i].dt, "X").format("M/D/YY")}</h3>
-                 
+                <h3>${moment(forecastData.daily[i].dt, "X").format("M/D/YY")}</h3>                 
                 <img src="https://openweathermap.org/img/wn/${forecastData.daily[i].weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
                 <h1>${forecastData.daily[i].temp.day}<span>&#176;</span>F</h1>
             </div>
@@ -57,7 +56,7 @@ function forecastDisplayed(forecastData) {
     return forecast.join("");
 }
 
-// Here we are calling the api's longitude and latitude for the wind, UV, etc.
+// Here we are calling the api's longitude and latitude
 function searchWeatherByCoordinates(lat,lon) {
     var locQueryUrl = `${openWeatherURL}onecall?${lat}&${lon}&exclude=minutely,hourly&units=imperial&appid=${openWeatherKey}`;
 
@@ -116,19 +115,13 @@ function saveSearches() {
 function clearSearchbox() {
     searchEl.empty();
     searchEl.append(`
-        <input type="search" placeholder="Search for a city" class="form-control" id="searchInput">
-        <input type="search" placeholder="Search radius (miles)" class="form-control" id="radiusInput">
-        <input type="search" placeholder="Minimum trail length (miles)" class="form-control" id="mindistInput">
-        <input type="search" placeholder="Maximum trail length (miles)" class="form-control" id="maxdistInput">
+        <input type="search" placeholder="Search for a City" class="form-control" id="searchInput">
+        <input type="search" placeholder="Search Radius (miles)" class="form-control" id="radiusInput">
+        <input type="search" placeholder="Minimum Trail Length (Miles)" class="form-control" id="mindistInput">
+        <input type="search" placeholder="Maximum Trail Length (Miles)" class="form-control" id="maxdistInput">
         <button type="submit" class="waves-effect waves-light amber accent-4 btn" id="searchBtn">Search</button>
     `)
 }
-function getSelectValue()
-    {
-      var selectedValue = document.getElementById("list").value;
-      console.log(selectedValue);
-    }
-    
 
 // Will clear the saved cities
 function clearSavedHistory() {
