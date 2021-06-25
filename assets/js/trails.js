@@ -1,9 +1,11 @@
+// global variables
 var data1;
 var data2;
 var mindistEl = $('#mindistInput');
 var maxdistEl = $('#maxdistInput');
 var radiusEl = $('#radiusInput');
 
+// This will fiter the data gathered based off the user input
 function filterAndSortData(data) {
     var info = [];
 
@@ -18,7 +20,7 @@ function filterAndSortData(data) {
 
     return info;
 }
-
+// display trails to html
 function trailsDisplayed(data, mindist, maxdist) {
     
 	console.log("info",data)

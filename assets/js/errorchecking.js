@@ -1,4 +1,4 @@
-
+// global variables
 var mmodal1 = document.getElementsByClassName("modal1")[0];
 var mmodal2 = document.getElementsByClassName("modal2")[0];
 var mmain = document.getElementById("mmain");
@@ -7,12 +7,12 @@ var modalEl = $('#mmd');
 var span = document.getElementById("spann1");
 var span1 = document.getElementById("spann2");
 
-console.log(span,span1)
 // Error checking functions
 function isNumeric(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
+// If user does not enter input for any of the 3 inputs, modal will appear
 function ErrorBikeinputschk(mindist,maxdist,radius){ 
     console.log("Error Checking inprogress")
     if(!isNumeric(radius)||radius==null || radius > 50 ){
@@ -31,19 +31,18 @@ function ErrorBikeinputschk(mindist,maxdist,radius){
 	}
     else{ return true}
 }
-
+// To exit out of modal
 span.addEventListener('click',function(e){
     console.log("span on modal1")
     document.getElementsByClassName('modal1')[0].style.display = "none";
     window.location.reload();
 })
-
 span1.addEventListener('click',function(e){
-    // mmodal2.style.display = "none";
     document.getElementsByClassName('modal2')[0].style.display = "none";
     window.location.reload();
 })
 
+// STYLING FOR MOBILE VIEW
 $(window).on('resize', function() {
     var win = $(this);
     if (win.width() > 600) {
@@ -55,7 +54,7 @@ $(window).on('resize', function() {
       $('main').addClass('col');
     }
   });
-//   var cardEl = document.querySelector(".card-content")
+
   var traillsdis = document.getElementById("trails-display")
   traillsdis.addEventListener("click",function(event){
   console.log("clicked on card")
