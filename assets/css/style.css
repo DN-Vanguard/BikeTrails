@@ -106,7 +106,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     flex-direction: column;
 }
 .modal2{
-    display: none;
+    display: block;
     flex-direction: column;
 }
 *.modal-header{

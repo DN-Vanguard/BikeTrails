@@ -1,20 +1,17 @@
 
 var mmodal1 = document.getElementsByClassName("modal1")[0];
-var mmodal2 = document.getElementsByClassName("modal2")[0];
-// var mmain = document.getElementById("mmain");
 var modalEl = $('#mmd');
-
 var span = document.getElementById("spann1");
-var span1 = document.getElementById("spann2");
 
-// Error checking functions
+// Error checking functions - checks to see if object is a number
 function isNumeric(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-// Function to check bike trail inputs
+// Function to check bike trail inputs mininum,maximum distance and search radius
 function ErrorBikeinputschk(mindist,maxdist,radius){ 
     if(!isNumeric(radius)||radius==null || radius > 50 || radius <0.1 ){
+
         document.getElementsByClassName('modal1')[0].style.display ="block";
         return(false);
     }
@@ -31,18 +28,14 @@ function ErrorBikeinputschk(mindist,maxdist,radius){
 
 // Modal close for incorrect trail inputs  radius, mindist, maxdist
 span.addEventListener('click',function(e){
+    e.preventDefault();
     console.log("span on modal1")
     document.getElementsByClassName('modal1')[0].style.display = "none";
     window.location.reload();
 })
 
-// Modal close for No trail found meeting distance requirements
-span1.addEventListener('click',function(e){
-    document.getElementsByClassName('modal2')[0].style.display = "none";
-    window.location.reload();
-})
 
-// Resize window for mobile view
+// Resize window for mobile  - desktop view dynamically 
 $(window).on('resize', function() {
     var win = $(this);
     if (win.width() > 600) {
@@ -67,20 +60,7 @@ $(window).on('resize', function() {
         }
         console.log("second", element.classList)
     })
-      
-function startscreen(){
-    $(window).on('resize', function() {
-        var win = $(this);
-        if (win.width() > 600) {
-          $('main').removeClass('col');
-          $('main').addClass('row');
-      
-        } else {
-          $('main').removeClass('row');
-          $('main').addClass('col');
-        }
-      });
-}
+
 // Start window in correct class
 if(window.innerWidth > 600){
     $('main').addClass('row');
@@ -89,3 +69,4 @@ else{
     $('main').addClass('col');
 }
 
+console.log("start over start first")
