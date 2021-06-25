@@ -143,7 +143,7 @@ function displayPreviousSearch() {
         }
         previousSearches.unshift(cities);
     }
-
+  
     clearSavedHistory();
     clearSearchbox();
 

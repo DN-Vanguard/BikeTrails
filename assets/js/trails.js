@@ -6,11 +6,9 @@ var radiusEl = $('#radiusInput');
 
 function filterAndSortData(data) {
     var info = [];
-
     for (var x = 0; x < data.length; x++) {
 		info[x] = [parseFloat(data[x].length), data[x].name, data[x].url, data[x].description, data[x].city]
 	}
-	// console.log(info)
 	// Sort trail list in descending order
 	info.sort(function (a, b) {
 		return b[0] - a[0];
@@ -19,20 +17,21 @@ function filterAndSortData(data) {
     return info;
 }
 
-function trailsDisplayed(data, mindist, maxdist) {
-    
-	console.log("info",data)
-	console.log("first",data[0][0], mindist, maxdist, "last",data[data.length-1][0])
-
-	// Flag error through modal if trail distance requirements aren't met
-	var end= data.length-1;
-	console.log(maxdist,data[end][0] )
+function trailsfoundmeetingdist(data,mindist,maxdist){
+    var end= data.length-1;
+	
 	if(mindist > data[0][0] || maxdist < data[end][0]){
 		document.getElementsByClassName('modal2')[0].style.display = "block";
-		return;
+		console.log("trail not found", maxdist,data[end][0] )
+        return false;
 	}
-	
+    else{ return true}
+}
+
+function trailsDisplayed(data, mindist, maxdist) {
+	// Flag error through modal if trail distance requirements aren't met
     trailsDisplay.empty();
+    if( trailsfoundmeetingdist(data,mindist,maxdist)){
 	for (let t= 0; t < data.length; t++) {
 		console.log(data[t][0]< maxdist)
 		if(parseFloat(data[t][0]) > mindist && parseFloat(data[t][0]) < maxdist){
@@ -50,8 +49,8 @@ function trailsDisplayed(data, mindist, maxdist) {
             `);
 		}	
 	}
-	return
-
+  }
+  return
 }
 
 // SEARCH TRAILS USING WEATHER CITY COORDINATES
@@ -69,6 +68,7 @@ function searchTrailsByCoordinates (lon, lat, radius) {
     })
     .then(function (local) {
         var trailsData = local.data;
+        // Display trails after filtering and sorting, grab latest mindist, maxdist inputs
         trailsDisplayed(filterAndSortData(trailsData), mindistEl.val(), maxdistEl.val());
         return (trailsData);
     })

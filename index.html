@@ -25,10 +25,7 @@
             <div id="previous-search"></div>
         </section>
         <section class="col s9">
-            <section id="weather-display"></section>
-            <section id="trails-display"></section>
             <section id="modals-display">
-                <!-- these modals below will appear if a user clicks "search" but 1 or more inputs are not implemented -->
                 <div id="mmd" class="modal right">
                     <div  id = "mmd1" class="modal1">
                         <div class="modal-header " >
@@ -36,7 +33,7 @@
                             <span id = "spann1" class="close">&times;</span>
                         </div>
                             <div class="modal-content">
-                            <p style="color:black">1) Check Search Radius is a number and &lt; 50 miles </p>   
+                            <p style="color:black">1) Check Search Radius is a number and 0 &lt; Radius &lt; 50 miles </p>   
                             <p style="color:black">2) Check Min Trail length and Max Trail length are numbers </p>
                             <p style="color:black">3) Check that: 0 &lt; Min Trail length &lt; Max Trail length</p>
                             </div>
@@ -51,7 +48,12 @@
                         </div>
                     </div>
                 </div>
+
             </section>
+            <section id="weather-display"></section>
+            
+            <section id="trails-display"></section>
+            
         </section>
     </main>
 
