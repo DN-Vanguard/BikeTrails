@@ -49,7 +49,7 @@ function forecastDisplayed(forecastData) {
                 <h3>${moment(forecastData.daily[i].dt, "X").format("dddd")}</h3><br>
                 <h3>${moment(forecastData.daily[i].dt, "X").format("M/D/YY")}</h3>                 
                 <img src="https://openweathermap.org/img/wn/${forecastData.daily[i].weather[0].icon}@2x.png" alt="weather icon" class="icon"> 
-                <h1>${forecastData.daily[i].temp.day}<span>&#176;</span>F</h1>
+                <h1>${forecastData.daily[i].temp.day.toFixed(1)}<span>&#176;</span>F</h1>
             </div>
         `)
     }

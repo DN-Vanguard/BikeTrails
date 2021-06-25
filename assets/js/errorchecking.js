@@ -44,12 +44,32 @@ span1.addEventListener('click',function(e){
     window.location.reload();
 })
 
+$(window).on('resize', function() {
+    var win = $(this);
+    if (win.width() > 600) {
+      $('main').removeClass('col');
+      $('main').addClass('row');
+  
+    } else {
+      $('main').removeClass('row');
+      $('main').addClass('col');
+    }
+  });
+//   var cardEl = document.querySelector(".card-content")
+  var traillsdis = document.getElementById("trails-display")
+  traillsdis.addEventListener("click",function(event){
+  console.log("clicked on card")
+  var element=event.target;
+  console.log("first", element.classList)
+  if(element.classList[0]==="truncate"){
+      var state = element.getAttribute("data-state");
+      element.setAttribute("class","");
+      }
+      else{
+        element.setAttribute("class","truncate");
+      }
+      console.log("second", element.classList)
+  })
+      
 
-// When the user clicks anywhere outside of the modal, close it
-// window.onclick = function (event) {
-//     if (event.target == mmain) {
-//         window.location.reload();
-//         modal.style.display = "none";
-//         modal1.style.display = "none";
-//     }
-// }
+

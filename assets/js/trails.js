@@ -38,9 +38,9 @@ function trailsDisplayed(data, mindist, maxdist) {
 		if(parseFloat(data[t][0]) > mindist && parseFloat(data[t][0]) < maxdist){
 			trailsDisplay.append(`
                 <div class="card">
-                    <div class="card-content">
+                    <div class="card-content" >
                         <p class=".trail-name card-title">${data[t][1]}</p>
-                        <p>${data[t][3]}
+                        <p class="truncate" data-state="trunc">${data[t][3]}
                         <br>
                         <br>Trail length: ${data[t][0]} miles</p>
                         <br>Local City: ${data[t][4]}</p>
