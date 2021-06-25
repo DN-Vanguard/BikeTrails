@@ -138,8 +138,12 @@ h3 { /* weather data*/
 
 /* MOBILE VIEW */
 @media only screen and (max-width: 320px) {
-input {
-    display: flex;
-    flex-direction: column;
-}
+    input {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    header h1 {
+        text-align: center;
+    }
 }
