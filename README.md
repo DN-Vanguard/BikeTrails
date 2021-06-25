@@ -60,7 +60,7 @@ THEN I am redirected to a new tab that shows more information
 ## <u>Wireframe or sketch of design</u>
 ![Landing_Page](assets/images/landingPage.png)
 ![User_Inputs](assets/images/userInput.png)
-![Mobile_View](assets/images/mobileView.png)
+![Mobile_view](assets/images/mobile-View.png)
 
 ## <u>API's to use</u>
 [TRAIL_API] https://rapidapi.com/trailapi/api/trailapi/
