@@ -147,3 +147,8 @@ h4 { /* the 5 populated dates under 5 day forecast*/
         flex-direction: column;
     }
   }
+  @media only screen and (max-width: 600px) {
+    main {
+      background-color: lightblue;
+    }
+  }
