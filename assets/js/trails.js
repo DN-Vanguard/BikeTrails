@@ -5,21 +5,59 @@ var mindistEl = $('#mindistInput');
 var maxdistEl = $('#maxdistInput');
 var radiusEl = $('#radiusInput');
 
+// Find trails of desired ride length and sort in descending order
 // This will fiter the data gathered based off the user input
 function filterAndSortData(data) {
+    var mindist=mindistEl.val()
+    var maxdist=maxdistEl.val()
+    console.log(maxdist,mindist)
     var info = [];
-
     for (var x = 0; x < data.length; x++) {
-		info[x] = [parseFloat(data[x].length), data[x].name, data[x].url, data[x].description, data[x].city]
-	}
-	// console.log(info)
-	// Sort trail list in descending order
-	info.sort(function (a, b) {
-		return b[0] - a[0];
-	});
-
-    return info;
+        if(parseFloat(data[x].length) < maxdist && parseFloat(data[x].length)>mindist){
+        info[x] = [parseFloat(data[x].length), data[x].name, data[x].url, data[x].description, data[x].city] 
+        } 
+      }
+   if(info.length>0)
+    {
+        // Sort trail list in descending order
+        info.sort(function (a, b) {
+            return b[0] - a[0];
+        });
+        return info;
+    }
+    // If no trail found meeting desired ride length
+    else{
+        console.log("no trail found")
+        presentmodal2();
+        var span1 = document.getElementById("spann2");
+        span1.addEventListener('click',function(e){
+            e.preventDefault();
+            document.getElementsByClassName('modal2')[0].style.display = "none";
+            window.location.reload();
+        })
+       return false;
+    }
 }
+// No Trails found of desired length
+function presentmodal2(){
+    console.log("appending")
+    $("header").append(`
+    <div class="modal left">
+    <div id="mmd2" class="modal2">
+        <div class="modal-header" >
+            <h3 style="color:white">No Trail Found meeting your ride length needs</h3>
+            <span id="spann2" class="close">&times;</span>
+        </div>
+        <div class="modal-content">
+        <p style="color:black">No Trails in this city found meeting your Min and Max Lengths.</p>
+        </div>
+    </div>
+    </div>
+    `)
+    }
+
+function trailsDisplayed(data) { 
+=======
 // display trails to html
 function trailsDisplayed(data, mindist, maxdist) {
     
@@ -33,11 +71,8 @@ function trailsDisplayed(data, mindist, maxdist) {
 		document.getElementsByClassName('modal2')[0].style.display = "block";
 		return;
 	}
-	
     trailsDisplay.empty();
 	for (let t= 0; t < data.length; t++) {
-		console.log(data[t][0]< maxdist)
-		if(parseFloat(data[t][0]) > mindist && parseFloat(data[t][0]) < maxdist){
 			trailsDisplay.append(`
                 <div class="card">
                     <div class="card-content" >
@@ -50,13 +85,11 @@ function trailsDisplayed(data, mindist, maxdist) {
                     </div>
                 </div>
             `);
-		}	
 	}
-	return
-
+  return
 }
 
-// SEARCH TRAILS USING WEATHER CITY COORDINATES
+// API SEARCH TRAILS USING WEATHER CITY COORDINATES
 function searchTrailsByCoordinates (lon, lat, radius) {
     var trailQueryURL = `${trailURL}explore/?${lon}&${lat}&${radius}`;
     fetch(trailQueryURL, {
@@ -71,8 +104,11 @@ function searchTrailsByCoordinates (lon, lat, radius) {
     })
     .then(function (local) {
         var trailsData = local.data;
-        trailsDisplayed(filterAndSortData(trailsData), mindistEl.val(), maxdistEl.val());
-        return (trailsData);
+        var info = filterAndSortData(trailsData);
+        if(info){
+            trailsDisplayed(info);
+        }
+        return (info);
     })
     .catch(function (error) {
         return error;

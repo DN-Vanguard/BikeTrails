@@ -96,15 +96,16 @@ h3 { /* weather data*/
 /* Modal Content */
 .modal { 
     display:block;
+    float:left;
     width: 50%;
     background-color: rgba(0,0,0,0.3);
 }
 .modal1{
-    display: none;
+    display: block;
     flex-direction: column;
 }
 .modal2{
-    display: none;
+    display: block;
     flex-direction: column;
 }
 *.modal-header{
@@ -146,4 +147,8 @@ h3 { /* weather data*/
     header h1 {
         text-align: center;
     }
+.normal:hover,  .truncate:hover,
+.normal:focus,  .truncate:focus {
+  cursor:pointer;
+  }
 }
