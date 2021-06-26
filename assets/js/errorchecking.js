@@ -1,11 +1,20 @@
-
-
 // Error checking functions - checks to see if object is a number
+// global variables
+var mmodal1 = document.getElementsByClassName("modal1")[0];
+var mmodal2 = document.getElementsByClassName("modal2")[0];
+var mmain = document.getElementById("mmain");
+var modalEl = $('#mmd');
+
+var span = document.getElementById("spann1");
+var span1 = document.getElementById("spann2");
+
+// Error checking functions
 function isNumeric(n) {
 	return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
 // Function to check bike trail inputs mininum,maximum distance and search radius
+// If user does not enter input for any of the 3 inputs, modal will appear
 function ErrorBikeinputschk(mindist,maxdist,radius){ 
     if(!isNumeric(radius)||radius==null || radius > 50 || radius <0.1 ){
         presentmodal1();
@@ -45,12 +54,23 @@ function presentmodal1(){
         window.location.reload();
     })
 }
-
 // Modal close for incorrect trail inputs  radius, mindist, maxdist
 
 
 
 // Resize window for mobile  - desktop view dynamically 
+// To exit out of modal
+span.addEventListener('click',function(e){
+    console.log("span on modal1")
+    document.getElementsByClassName('modal1')[0].style.display = "none";
+    window.location.reload();
+})
+span1.addEventListener('click',function(e){
+    document.getElementsByClassName('modal2')[0].style.display = "none";
+    window.location.reload();
+})
+
+// STYLING FOR MOBILE VIEW
 $(window).on('resize', function() {
     var win = $(this);
     if (win.width() > 600) {
@@ -62,8 +82,7 @@ $(window).on('resize', function() {
       $('main').addClass('col');
     }
   });
-
-//   Toggles trail info description from truncate to full 
+// Toggles trail info description from truncate to full 
   var traillsdis = document.getElementById("trails-display")
   traillsdis.addEventListener("click",function(event){
     var element=event.target;

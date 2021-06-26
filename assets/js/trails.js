@@ -1,9 +1,12 @@
-
+// global variables
+var data1;
+var data2;
 var mindistEl = $('#mindistInput');
 var maxdistEl = $('#maxdistInput');
 var radiusEl = $('#radiusInput');
 
 // Find trails of desired ride length and sort in descending order
+// This will fiter the data gathered based off the user input
 function filterAndSortData(data) {
     var mindist=mindistEl.val()
     var maxdist=maxdistEl.val()
@@ -54,6 +57,20 @@ function presentmodal2(){
     }
 
 function trailsDisplayed(data) { 
+=======
+// display trails to html
+function trailsDisplayed(data, mindist, maxdist) {
+    
+	console.log("info",data)
+	console.log("first",data[0][0], mindist, maxdist, "last",data[data.length-1][0])
+
+	// Flag error through modal if trail distance requirements aren't met
+	var end= data.length-1;
+	console.log(maxdist,data[end][0] )
+	if(mindist > data[0][0] || maxdist < data[end][0]){
+		document.getElementsByClassName('modal2')[0].style.display = "block";
+		return;
+	}
     trailsDisplay.empty();
 	for (let t= 0; t < data.length; t++) {
 			trailsDisplay.append(`

@@ -19,24 +19,21 @@ header {
     padding: 10px;
 }
 /* h tag styling */
-h1,h2,h3,h4 {
+h1,h2,h3 {
     font-weight: var(--fontWeight);
     margin: 0px;
     color: var(--fontColor);
 }
-h1 { /* title: Weather Dashboard */
+h1 { /* title: Bike Trails */
     font-size: 200%;
 }
-h2 {/* 'search for a city' and see js code under id=currentWeatherBox*/
+h2 {/* error display*/
     font-size: 180%;
     color: var(--gradientLeft);
 }
-h3 { /* the words '5-day forecast'*/
+h3 { /* weather data*/
     font-size: 150%;
     margin-top: 10px;
-}
-h4 { /* the 5 populated dates under 5 day forecast*/
-    font-size: 130%;
 }
 
 /* left hand column */
@@ -65,10 +62,7 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     padding: 5px;
     margin-bottom: 15px;
 }
-#error{
-    padding: 20px;
-    margin-left: 20px;
-}
+
 .scrollbar {
     overflow: auto;
     white-space: nowrap;
@@ -94,6 +88,10 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     border-radius: 20px;
     color: var(--fontColor);
 }
+#error{
+    padding: 20px;
+    margin-left: 20px;
+}
 
 /* Modal Content */
 .modal { 
@@ -114,7 +112,6 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     background-color: coral;
     display:flex;
     justify-content: space-evenly;
-
 }
 *.modal h3{
     margin:auto;
@@ -124,7 +121,6 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     margin: 0;
     padding: 0px;
     border: 1px solid #888;
-
   }
   
 /* The Close Button */
@@ -141,20 +137,18 @@ h4 { /* the 5 populated dates under 5 day forecast*/
     cursor: pointer;
   } 
 
-.normal:hover,  .truncate:hover,
-.normal:focus,  .truncate:focus{
-cursor:pointer;
-  }
-
-  /* MOBILE VIEW */
-  @media only screen and (max-width: 600px) {
+/* MOBILE VIEW */
+@media only screen and (max-width: 320px) {
     input {
         display: flex;
         flex-direction: column;
+        text-align: center;
     }
-  }
-  @media only screen and (max-width: 600px) {
-    main {
-      background-color: lightblue;
+    header h1 {
+        text-align: center;
     }
+.normal:hover,  .truncate:hover,
+.normal:focus,  .truncate:focus {
+  cursor:pointer;
   }
+}
