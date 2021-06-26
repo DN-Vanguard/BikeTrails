@@ -98,11 +98,12 @@ h4 { /* the 5 populated dates under 5 day forecast*/
 /* Modal Content */
 .modal { 
     display:block;
+    float:left;
     width: 50%;
     background-color: rgba(0,0,0,0.3);
 }
 .modal1{
-    display: none;
+    display: block;
     flex-direction: column;
 }
 .modal2{

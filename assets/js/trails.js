@@ -24,8 +24,8 @@ function filterAndSortData(data) {
     }
     // If no trail found meeting desired ride length
     else{
+        console.log("no trail found")
         presentmodal2();
-        var mmodal2 = document.getElementsByClassName("modal2")[0];
         var span1 = document.getElementById("spann2");
         span1.addEventListener('click',function(e){
             e.preventDefault();
@@ -38,11 +38,11 @@ function filterAndSortData(data) {
 // No Trails found of desired length
 function presentmodal2(){
     console.log("appending")
-    $("#modals-display").append(`
+    $("header").append(`
     <div class="modal left">
     <div id="mmd2" class="modal2">
         <div class="modal-header" >
-            <h3 style="color:white">No Trail Found meeting your needs</h3>
+            <h3 style="color:white">No Trail Found meeting your ride length needs</h3>
             <span id="spann2" class="close">&times;</span>
         </div>
         <div class="modal-content">
@@ -52,7 +52,6 @@ function presentmodal2(){
     </div>
     `)
     }
-
 
 function trailsDisplayed(data) { 
     trailsDisplay.empty();

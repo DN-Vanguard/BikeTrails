@@ -1,7 +1,4 @@
 
-var mmodal1 = document.getElementsByClassName("modal1")[0];
-var modalEl = $('#mmd');
-var span = document.getElementById("spann1");
 
 // Error checking functions - checks to see if object is a number
 function isNumeric(n) {
@@ -11,28 +8,46 @@ function isNumeric(n) {
 // Function to check bike trail inputs mininum,maximum distance and search radius
 function ErrorBikeinputschk(mindist,maxdist,radius){ 
     if(!isNumeric(radius)||radius==null || radius > 50 || radius <0.1 ){
-
-        document.getElementsByClassName('modal1')[0].style.display ="block";
+        presentmodal1();
         return(false);
     }
     var badinputs = (!isNumeric(mindist) || !isNumeric(maxdist)||mindist > maxdist || mindist <0 )
     if(badinputs){
-        mmodal1.style.display = "block";
+        presentmodal1();
 		return false;
 	}
     else{ 
-        console.log("inputs all good")
         return true
     }
 }
 
+function presentmodal1(){
+   
+    $("header").append(`
+    <div id="mmd" class="modal left">
+        <div  id = "mmd1" class="modal1">
+            <div class="modal-header " >
+                <h3 style="color:white">Error in Bike Trail Information Entry</h3>
+                <span id = "spann1" class="close">&times;</span>
+            </div>
+                <div class="modal-content">
+                <p style="color:black">1) Check Search Radius is a number and 0 &lt; Radius &lt; 50 miles </p>   
+                <p style="color:black">2) Check Min Trail length and Max Trail length are numbers </p>
+                <p style="color:black">3) Check that: 0 &lt; Min Trail length &lt; Max Trail length</p>
+                </div>
+        </div> 
+    </div>
+    `)
+    var span = document.getElementById("spann1");
+    span.addEventListener('click',function(e){
+        e.preventDefault();
+        // document.getElementsByClassName('modal1')[0].style.display = "none";
+        window.location.reload();
+    })
+}
+
 // Modal close for incorrect trail inputs  radius, mindist, maxdist
-span.addEventListener('click',function(e){
-    e.preventDefault();
-    console.log("span on modal1")
-    document.getElementsByClassName('modal1')[0].style.display = "none";
-    window.location.reload();
-})
+
 
 
 // Resize window for mobile  - desktop view dynamically 
@@ -58,7 +73,6 @@ $(window).on('resize', function() {
         else{
             element.setAttribute("class","truncate");
         }
-        console.log("second", element.classList)
     })
 
 // Start window in correct class
@@ -69,4 +83,3 @@ else{
     $('main').addClass('col');
 }
 
-console.log("start over start first")
